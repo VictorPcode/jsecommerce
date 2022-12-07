@@ -128,6 +128,7 @@ STATIC_ROOT = BASE_DIR/'static'
 STATICFILES_DIRS = [
    
     '/static/css',
+    '/static/image',
                     ]
 
 # Default primary key field type
