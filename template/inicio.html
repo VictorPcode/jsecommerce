@@ -15,45 +15,76 @@
 </head>
 
 <body>
-<style> 
+    <style>
+        body {
+            background: url('https://images.pexels.com/photos/5333142/pexels-photo-5333142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
 
-body{
-    background: url('../static/image/bgwall.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+        }
 
-</style>
 
-<div class="d-flex flex-column flex-md-row justify-content-end align-items-center p-3 px-md-4 mb-3 box-shadow">
+        main div {
+            display: block;
 
-    <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-white" style="text-decoration: none;" href="#">inicio</a>
-      <a class="p-2 text-white" style="text-decoration: none;" href="#">catalogo</a>
-      <a class="p-2 text-white" style="text-decoration: none;" href="#">contacto</a>
-    </nav>
-    <a class="float-right btn btn-outline-light" href="#">Sign up</a>
-    
-  </div>
+        }
+
+        main .container:nth-of-type(2) {
+            text-align: right;
+        }
+
+        main .text:nth-of-type(2) {
+            text-align: right;
+        }
+
+
+    </style>
+
+    <div
+        class="d-flex flex-column flex-md-row justify-content-end align-items-center p-3 px-md-4 mb-3 box-shadow  sticky-top">
+
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-white" style="text-decoration: none;" href="#">inicio</a>
+            <a class="p-2 text-white" style="text-decoration: none;" href="#">catalogo</a>
+            <a class="p-2 text-white" style="text-decoration: none;" href="#">contacto</a>
+        </nav>
+        <a class="float-right btn btn-outline-light" href="#">Sign up</a>
+
+    </div>
 
     <main>
-        <div class="container py-4">
-            <div class="p-5 mb-4 bg-gradient-info rounded-3">
-                <div class="container-fluid py- text-white">
+        <div class="container py-2">
+            <div class="p-5 mb-4 bg-gradient-info rounded-8">
+                <div class="container-fluid py-4 text-white">
                     <h1 class="display-5 fw-bold">JIRE STORE</h1>
                     <p class="col-md-8 fs-3">Nuestra tienda tiene como objetivo que nuestros clientes
                         consigan la mayor satisfaccion al adquirir nuestros productos, lo primero siempre
                         seran nuestros clientes.
                     </p>
-                    <button class="btn btn-info btn-lg " type="button">ENTRAR EN LA TIENDA</button>
+
                 </div>
             </div>
 
+            <div class="container py-2">
+                <div class="p-5 mb-4 bg-gradient-info rounded-8">
+                    <div class="text container-fluid py-4 text-white">
+                        <h1 class="display-5 fw-bold">COMPRA FACIL</h1>
+                        <p class="fs-3">Podra adquirir nuestros productos con tanta
+                            facilidad, que no podra creer. Creemos en nuestros clientes y ellos
+                            en nosotros.
+                        </p>
+                        <button class="btn btn-info btn-lg " type="button">CATALOGO</button>
+                    </div>
+                </div>
 
-            <footer class="pt-3 mt-4 text-white border-top">
-                &copy; Jire Store
-            </footer>
+
+
         </div>
+        
+        <footer class="pt-4 mt-5 text-white border-top">
+            &copy; Jire Store
+        </footer>
     </main>
 
 
