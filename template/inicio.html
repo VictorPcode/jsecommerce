@@ -32,14 +32,17 @@
 
         body::-webkit-scrollbar {
             display: none;
+            width: 8px;
         }
 
         body::-webkit-scrollbar {
             display: initial;
+            
         }
 
         body::-webkit-scrollbar-thumb {
             background-color: #09C;
+            
         }
 
         main div {
@@ -62,7 +65,7 @@
 
         <nav class="my-2 my-md-0 mr-md-3">
             <a class="p-2 text-white" style="text-decoration: none;" href="#">inicio</a>
-            <a class="p-2 text-white" style="text-decoration: none;" href="#">catalogo</a>
+            <a class="p-2 text-white" style="text-decoration: none;" href="{%url 'catalogo_producto'%}">catalogo</a>
             <a class="p-2 text-white" style="text-decoration: none;" href="#">contacto</a>
         </nav>
         <a class="float-right btn btn-outline-light" href="#">Sign up</a>
@@ -90,7 +93,7 @@
                             facilidad, que no podra creer. Creemos en nuestros clientes y ellos
                             en nosotros.
                         </p>
-                        <button class="btn btn-info btn-lg " type="button">CATALOGO</button>
+                        <a class="btn btn-info btn-lg " href="{%url 'catalogo_producto'%}" type="button">CATALOGO</a>
                     </div>
                 </div>
 
