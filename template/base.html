@@ -1,0 +1,53 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+    <script type="text/javascript">
+        /// some script
+
+        // jquery ready start
+        $(document).ready(function () {
+            // jQuery code
+
+        });
+        // jquery end
+    </script>
+
+    <!--static css-->
+    <link rel="stylesheet" href="{%static 'indice.css'%}">
+    <link rel="shortcut icon" href="{&static 'images/favicon.ico'&}" type="image/x-icon">
+    <link href="{%static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'fonts/fontawesome/css/all.min.css'%}" type="text/css" rel="stylesheet">
+    <link href="{%static 'css/ui.css'%}" rel="stylesheet" type="text/css" />
+    <link href="{%static 'css/responsive.css'%}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+    <!-- static js -->
+    <script src="{%static 'js/jquery-2.0.0.min.js'%}" type="text/javascript"></script>
+    <script src="{%static 'js/bootstrap.bundle.min.js'%}" type="text/javascript"></script>
+    <script src="{%static 'js/script.js'%}" type="text/javascript"></script>
+
+    <title>JireStore</title>
+</head>
+
+<body>
+
+
+    {%include 'includes/navbar.html'%}
+
+    {%block content%}
+
+
+
+    {%endblock%}
+
+
+    {%include 'includes/footer.html'%}

@@ -1,14 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogo</title>
-</head>
-<body>
-    
-    <h1>Catalogo</h1>
+{%extends 'base.html'%}
+{%load static%}
+{% block content %}
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card card-product-grid">
+                <a href="./product-detail.html" class="img-wrap"> <img src="{%static './images/1.jpg'%}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="./product-detail.html" class="title">Macbook Pro</a>
+                    <div class="price mt-1">G.244.000</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div class="card card-product-grid">
+                <a href="./product-detail.html" class="img-wrap"> <img src="{%static './images/2.jpg'%}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="./product-detail.html" class="title">Apple Watch</a>
+                    <div class="price mt-1">G.250.000</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div class="card card-product-grid">
+                <a href="./product-detail.html" class="img-wrap"> <img src="{%static './images/3.jpg'%}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="./product-detail.html" class="title">Bose Headphones</a>
+                    <div class="price mt-1">G.299.000</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div class="card card-product-grid">
+                <a href="./product-detail.html" class="img-wrap"> <img src="{%static './images/4.jpg'%}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="./product-detail.html" class="title">Airpods</a>
+                    <div class="price mt-1">G.179.000</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div class="card card-product-grid">
+                <a href="./product-detail.html" class="img-wrap"> <img src="{%static './images/5.jpg'%}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="./product-detail.html" class="title">Buffer Sounds</a>
+                    <div class="price mt-1">G.179.000</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div class="card card-product-grid">
+                <a href="./product-detail.html" class="img-wrap"> <img src="{%static './images/6.jpg'%}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="./product-detail.html" class="title">Logitech Mouse</a>
+                    <div class="price mt-1">G.560.00</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div class="card card-product-grid">
+                <a href="./product-detail.html" class="img-wrap"> <img src="{%static './images/7.jpg'%}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="./product-detail.html" class="title">IPad Pro</a>
+                    <div class="price mt-1">G.456.000</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+        <div class="col-md-3">
+            <div class="card card-product-grid">
+                <a href="./product-detail.html" class="img-wrap"> <img src="{%static './images/8.jpg'%}"> </a>
+                <figcaption class="info-wrap">
+                    <a href="./product-detail.html" class="title">Gaming Chair</a>
+                    <div class="price mt-1">G.179.000</div> <!-- price-wrap.// -->
+                </figcaption>
+            </div>
+        </div> <!-- col.// -->
+    </div> <!-- row.// -->
+
+    </div><!-- container // -->
+    </section>
+
+
+
 
 </body>
+
 </html>
+
+{%endblock%}

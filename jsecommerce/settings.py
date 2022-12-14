@@ -85,7 +85,7 @@ DATABASES = {
         "NAME": 'dbown',
         "USER": 'JSPROFILE',
         "PASSWORD": 'seguridad2022**',
-        "HOST": 'EMAUXBACKEND',
+        "HOST": 'EMSOPORTETIC',
         "PORT": '',
         "OPTIONS": {
                     },
@@ -129,9 +129,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR/'static'
-STATICFILES_DIRS = (
-    'static/css/',
-    )
+STATICFILES_DIRS = [
+    'jsecommerce/static',
+    'static/css'
+    ]
 
 
 
