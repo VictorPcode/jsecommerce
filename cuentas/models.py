@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
 class MiCuentaAdmin(BaseUserManager):
-    def crear_usuaio(self, username, first_name, last_name, email, password=None):
+    def crear_usuaio(self,  first_name, last_name, username, email, password=None):
         if not email:
             raise ValueError('El usuario debe tener un email')
         
@@ -21,12 +21,13 @@ class MiCuentaAdmin(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def crear_superusuario(self, username, first_name, last_name, email, password):
+    def crear_superusuario(self,  first_name, last_name, username, email, password):
         user =self.crear_usuaio(
             email = self.normalize_email(email),
             username = username,
             password = password,
             first_name = first_name,
+            last_name = last_name
             
         )
         
@@ -55,13 +56,15 @@ class Cuentas(AbstractBaseUser):
     USERNAME_FIELD ='email'
     REQUIRED_FIELDS =['username','first_name','last_name']
     
+    objects = MiCuentaAdmin()
+    
     def __str__(self):
         return self.email
     
-    def has_perm(self, perm, obj=None):
+    def has_perms(self, perm, obj=None):
         return self.is_admin
     
-    def has_module_perm(self, add_label):
+    def has_module_perms(self, add_label):
         return True
     
     

@@ -76,6 +76,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jsecommerce.wsgi.application'
 
+AUTH_USER_MODEL = 'cuentas.Cuentas'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
