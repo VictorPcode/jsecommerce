@@ -1,11 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from tienda.models import Producto
+from catalogo.models import Categoria
 
-def catalogoproducto(request):
+
+def catalogoproducto(request, slug=None):
+    categorias = None
+    producto = None
     
-    producto = Producto.objects.all().filter(is_available=True)
-    
+    if slug != None:
+        categorias = get_object_or_404(Categoria, slug=slug)
+        producto = Producto.objects.all().filter(categoria=categorias, is_available=True)
+        producto_contador = producto.count()
+    else:
+        producto = Producto.objects.all().filter(is_available=True)
+        producto_contador = producto.count()
+  
     context = {
         'productos': producto,
+        'producto_contador': producto_contador,
+        
     }
+    
+    
     return render(request, 'catalogoproducto.html', context)

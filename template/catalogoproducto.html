@@ -1,31 +1,38 @@
 {%extends 'base.html'%}
 {%load static%}
 {%block content%}
-<div class="row">
 
-    {% for producto in productos%}
-
-    <div class="col-md-3">
-        <div class="card card-product-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="{{producto.images.url}}" class="w-100"> </a>
-            <figcaption class="info-wrap">
-                <a href="./product-detail.html" class="title">{{producto.nombre_producto}}</a>
-                <div class="price mt-1">{{producto.precio}}</div> <!-- price-wrap.// -->
-            </figcaption>
-        </div>
-    </div> <!-- col.// -->
-</div> <!-- row.// -->
-
-
-</div><!-- container // -->
-</section>
-
-
-
-
+    <section class="section-name padding-y-sm">
+        <div class="container">
+        
+            <header class="section-heading">
+                <a href="./store.html" class="btn btn-outline-info float-right">Ver Todo</a>
+                <h3 class="section-title">Productos</h3>
+                <span class="mr-md-auto"><b>{{producto_contador}}</b> Productos Encontrados</span>
+            </header><!-- sect-heading -->
+            
+            <div class="row">
+                {% for producto in productos%} 
+                <div class="col-sm-3 ">
+                    <div class="card card-product-grid">
+                    <a href="./product-detail.html"> <img src="{{producto.images.url}}"
+                            class="w-100"></a>
+                    <figcaption class="info-wrap">
+                        <a href="./product-detail.html" class="title">{{producto.nombre_producto}}</a>
+                        <div class="price mt-1">{{producto.precio}}</div> <!-- price-wrap.// -->
+                    </figcaption>
+                    <a href="" class="btn btn-block btn-info">Agregar al carrito</a>
+                </div>
+            </div> <!-- col.// -->
+            {% endfor %}
+        </div> <!-- row.// -->
+        
+        </div><!-- container // -->
+        </section>
+        
 </body>
 
 </html>
 
-{% endfor %}
+
 {%endblock%}
