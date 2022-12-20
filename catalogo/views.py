@@ -9,10 +9,10 @@ def catalogoproducto(request, slug=None):
     
     if slug != None:
         categorias = get_object_or_404(Categoria, slug=slug)
-        producto = Producto.objects.all().filter(categoria=categorias, is_available=True)
+        producto = Producto.objects.filter(categoria=categorias, is_available=True)
         producto_contador = producto.count()
     else:
-        producto = Producto.objects.all().filter(is_available=True)
+        producto = Producto.objects.filter(is_available=True)
         producto_contador = producto.count()
   
     context = {
