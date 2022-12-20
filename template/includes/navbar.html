@@ -20,11 +20,9 @@
                                     <i class="fa fa-bars"></i> Categorias
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Camisas (Remeras)</a>
-                                    <a class="dropdown-item" href="#">categoria 2</a>
-                                    <a class="dropdown-item" href="#">categoria 3</a>
-                                    <a class="dropdown-item" href="#">categoria 4</a>
-                                    <a class="dropdown-item" href="#">categoria 5</a>
+                                    {%for Categoria in links%}
+                                    <a class="dropdown-item" href="{{Categoria.get_url}}">{{Categoria.nombre_categoria}}</a>
+                                    {%endfor%}
                                 </div>
                         </div>
                     </form> <!-- search-wrap .end// -->
@@ -45,7 +43,7 @@
       <div class="collapse navbar-collapse" id="navbarTop4">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
-                 <a href="#" class="nav-link">   Espanol </a>
+                 <a href="#" class="nav-link">Espanol</a>
                 
             </li>
             <li class="nav-item dropdown">
