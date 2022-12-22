@@ -3,7 +3,7 @@ from catalogo.models import Categoria
 
 class Producto(models.Model):
     nombre_producto = models.CharField(max_length=200, unique=True)
-    slug = models.CharField(max_length=200, unique=True)
+    producto_slug = models.CharField(max_length=200, unique=True)
     descripcion = models.TextField(max_length=500, blank=True)
     precio = models.IntegerField()
     images = models.ImageField(upload_to='catalogo/photos/products')
