@@ -15,10 +15,10 @@
                 {% for producto in productos%} 
                 <div class="col-sm-3 ">
                     <div class="card card-product-grid">
-                    <a href="./product-detail.html"> <img src="{{producto.images.url}}"
+                    <a href="{{ producto.get_url }}"> <img src="{{producto.images.url}}"
                             class="w-100"></a>
                     <figcaption class="info-wrap">
-                        <a href="./product-detail.html" class="title">{{producto.nombre_producto}}</a>
+                        <a href="{{ producto.get_url }}" class="title">{{producto.nombre_producto}}</a>
                         <div class="price mt-1">{{producto.precio}}</div> <!-- price-wrap.// -->
                     </figcaption>
                     <a href="" class="btn btn-block btn-info">Agregar al carrito</a>

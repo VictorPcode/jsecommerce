@@ -25,13 +25,13 @@ def catalogoproducto(request, slug=None):
     return render(request, 'catalogoproducto.html', context)
 
 def product_detail(request, slug, producto_slug): 
-    # try:
-    #     single_product = Producto.objects.get(slug__slug=slug, slug=producto_slug)
-    # except Exception as e:
-    #     raise e
+    try:
+        single_product = Producto.objects.get(categoria__slug=slug, producto_slug=producto_slug)
+    except Exception as e:
+        raise e
     
-    # context = {
-    #     'single_product' : single_product,
-    # }
+    context = {
+        'single_product' : single_product,
+    }
     
-    return render(request, 'product_detail.html')
+    return render(request, 'product_detail.html', context)
