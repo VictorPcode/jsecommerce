@@ -138,6 +138,7 @@ STATIC_ROOT = BASE_DIR/'static'
 STATICFILES_DIRS = [
     'static/css',
     'static/images',
+    'static/images/misc',
     ]
 
 MEDIA_URL = '/catalogo/'

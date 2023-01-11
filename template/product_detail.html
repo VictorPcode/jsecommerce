@@ -74,9 +74,9 @@
         {%if single_product.stock <= 0%}
         <h5>Fuera de stock</h5>
         {%else%}
-        <a href="./product-detail.html" class="btn  btn-primary"> <span class="text">Agregar al carrito</span> <i class="fas fa-shopping-cart"></i>  </a>
+        <a href="{%url 'agregarCarrito' single_product.id%}" class="btn  btn-primary"> <span class="text">Agregar al carrito</span> <i class="fas fa-shopping-cart"></i>  </a>
         {%endif%}
-
+        <a href="{%url 'catalogo_producto'%}" class="btn btn-outline-info float-right">Volver al catalogo</a>
     </article> <!-- product-info-aside .// -->
             </main> <!-- col.// -->
         </div> <!-- row.// -->
