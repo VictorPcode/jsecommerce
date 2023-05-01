@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 
 
 
@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'catalogo.apps.CatalogoConfig',
     'cuentas.apps.CuentasConfig',
+    'tienda.apps.TiendaConfig',
+    'carrito.apps.CarritoConfig',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'catalogo.context_processors.menu_links',
             ],
         },
     },
@@ -135,11 +138,18 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR/'static'
 
 STATICFILES_DIRS = [
-    'jsecommerce/static',
-    'static/css'
+    'static/css',
+    'static/images',
+    'static/images/misc',
     ]
 
-
+MEDIA_URL = '/catalogo/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'catalogo')
+MEDIAFILES_DIRS =[
+    'photos',
+    'static/images',
+    
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

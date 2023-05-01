@@ -24,7 +24,7 @@
 
     <!--static css-->
     <link rel="stylesheet" href="{%static 'indice.css'%}">
-    <link rel="shortcut icon" href="{&static 'images/favicon.ico'&}" type="image/x-icon">
+    <link rel="shortcut icon" href="{%static 'images/favicon.ico'%}" type="image/x-icon">
     <link href="{%static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css" />
     <link href="{%static 'fonts/fontawesome/css/all.min.css'%}" type="text/css" rel="stylesheet">
     <link href="{%static 'css/ui.css'%}" rel="stylesheet" type="text/css" />
@@ -37,6 +37,51 @@
 
     <title>JireStore</title>
 </head>
+
+<style>
+
+
+    body {
+        /* background: url('https://images.pexels.com/photos/5333142/pexels-photo-5333142.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        scrollbar-color: rgba(0, 191, 255, 0.605) transparent;
+        scrollbar-width: thin;
+        
+    }
+
+
+
+    body::-webkit-scrollbar {
+        display: none;
+        width: 8px;
+    }
+
+    body::-webkit-scrollbar {
+        display: initial;
+        
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: #09C;
+        
+    }
+
+    main div {
+        display: block;
+
+
+    }
+
+    main .container:nth-of-type(2) {
+        text-align: right;
+    }
+
+    main .text:nth-of-type(2) {
+        text-align: right;
+    }
+</style>
 
 <body>
 
