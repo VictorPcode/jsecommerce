@@ -6,7 +6,7 @@
 <section class="section-content padding-y bg">
     <div class="container">
     
-    <!-- ============================ COMPONENT 1 ================================= -->
+    
     
     <div class="row">
         <aside class="col-lg-9">
@@ -21,47 +21,6 @@
     </tr>
     </thead>
     <tbody>
-<<<<<<< HEAD
-    
-    {% for carritoItem in carritoItem %}
-
-    <tr>
-        <td>
-            <figure class="itemside align-items-center">
-                <div class="aside"><img src="{{carritoItem.product.images.url}}" class="img-sm"></div>
-                <figcaption class="info">
-                    <a href="#" class="title text-dark">{{carritoItem.product.nombre_producto}}</a>
-                    <p class="text-muted small">Matrix: 25 Mpx <br> Marca: Canon</p>
-                </figcaption>
-            </figure>
-        </td>
-        <td> 
-            <!-- col.// -->
-                        <div class="col"> 
-                            <div class="input-group input-spinner">
-                                <div class="input-group-prepend">
-                                <button class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </button>
-                                </div>
-                                <input type="text" class="form-control"  value="{{carritoItem.cantidad}}">
-                                <div class="input-group-append">
-                                <button class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </button>
-                                </div>
-                            </div> <!-- input-group.// -->
-                        </div> <!-- col.// -->
-        </td>
-        <td> 
-            <div class="price-wrap"> 
-                <var class="price">PY {{carritoItem.subtotal}}</var> 
-                <small class="text-muted">PY {{carritoItem.product.precio}} c/u </small> 
-            </div> <!-- price-wrap .// -->
-        </td>
-        <td class="text-right"> 
-        <a href="" class="btn btn-danger"> Eliminar</a>
-        </td>
-    </tr>
-
-    {%endfor%}
-=======
 
         {% for carritoItem in carritoItems %}
         <tr>
@@ -84,14 +43,14 @@
                         <div class="input-group-append">
                             <a href="{% url 'agregarCarrito' carritoItem.product_id %}" class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
                         </div>
-                    </div> <!-- input-group.// -->
-                </div> <!-- col.// -->
+                    </div> 
+                </div> 
             </td>
             <td> 
                 <div class="price-wrap"> 
                     <var class="price">PY {{ carritoItem.sub_total }}</var> 
                     <small class="text-muted"> ${{ carritoItem.product.precio}} cada uno </small> 
-                </div> <!-- price-wrap .// -->
+                </div> 
             </td>
             <td class="text-right"> 
                 <a href="{% url 'eliminar_del_carrito' carritoItem.product.producto_slug %}" class="btn btn-danger"> Eliminar</a>
@@ -99,39 +58,26 @@
         </tr>
         {% endfor %}
 
->>>>>>> 5f80bc760dd46574259e28fd7c94b34b6f6c0d81
     </tbody>
     </table>
-    </div> <!-- card.// -->
+    </div> 
     
-        </aside> <!-- col.// -->
+        </aside> 
         <aside class="col-lg-3">
     
             <div class="card">
             <div class="card-body">
                 <dl class="dlist-align">
-<<<<<<< HEAD
-                  <dt>Preico Total:</dt>
-                  <dd class="text-right">{{total}}</dd>
-                </dl>
-                <dl class="dlist-align">
-                  <dt>Iva:</dt>
-=======
                   <dt>Precio Total:</dt>
                   <dd class="text-right"> {{total}}</dd>
                 </dl>
                 <dl class="dlist-align">
                   <dt>IVA:</dt>
->>>>>>> 5f80bc760dd46574259e28fd7c94b34b6f6c0d81
                   <dd class="text-right">{{iva}}</dd>
                 </dl>
                 <dl class="dlist-align">
                   <dt>Total:</dt>
-<<<<<<< HEAD
-                  <dd class="text-right text-dark b"><strong>{{granTotal}}</strong></dd>
-=======
                   <dd class="text-right text-dark b"><strong>{{grand_total}}</strong></dd>
->>>>>>> 5f80bc760dd46574259e28fd7c94b34b6f6c0d81
                 </dl>
                 <hr>
                 <p class="text-center mb-3">
@@ -139,16 +85,15 @@
                 </p>
                 <a href="./place-order.html" class="btn btn-primary btn-block"> Pagar </a>
                 <a href="./store.html" class="btn btn-light btn-block">Continua comprando</a>
-            </div> <!-- card-body.// -->
-            </div> <!-- card.// -->
+            </div> <
+            </div> 
     
-    </aside> <!-- col.// -->
+    </aside> 
     
     
-    </div> <!-- row.// -->
-    <!-- ============================ COMPONENT 1 END .// ================================= -->
-    
-    </div> <!-- container .//  -->
+    </div> 
+
+    </div> 
     </section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
+
     {%endblock%}
