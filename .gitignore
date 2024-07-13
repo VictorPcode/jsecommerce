@@ -150,14 +150,13 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
-<<<<<<< HEAD
-=======
+# Ignorar archivos de migraciones
+**/migrations/
 
-# **/__pycache__/*.pyc
-**/__pycache__/*.pyc
+# Ignorar archivos compilados de Python
+*.pyc
+__pycache__/
 
-
->>>>>>> 5f80bc760dd46574259e28fd7c94b34b6f6c0d81
 # Pyre type checker
 .pyre/
 
