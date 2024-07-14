@@ -3,6 +3,8 @@ from tienda.models import Producto
 from .models import Carrito, CarritoItem
 from django.core.exceptions import ObjectDoesNotExist
 
+
+ #funcion privada  para usarla en este view
 def _carrito_id(request):
     carrito = request.session.session_key
     if not carrito:
@@ -12,6 +14,7 @@ def _carrito_id(request):
 def agregarCarrito(request, product_id):
     product = get_object_or_404(Producto, id=product_id)
     try:
+        #este carrito id sera la session actual que viene de la funcion privada _carrito_id
         carrito = Carrito.objects.get(carrito_id=_carrito_id(request))
     except Carrito.DoesNotExist:
         carrito = Carrito.objects.create(carrito_id=_carrito_id(request))
@@ -25,7 +28,7 @@ def agregarCarrito(request, product_id):
         carrito_item = CarritoItem.objects.create(
             product=product,
             cantidad=1,
-            carrito=carrito
+            carrito=carrito,
         )
         carrito_item.save()
 
@@ -49,8 +52,8 @@ def remover_carritoItem(request, product_id):
 def carrito(request, total=0, cantidad=0, carritoItem=None):
     try:
         carrito = Carrito.objects.get(carrito_id=_carrito_id(request))
-        carritoItem = CarritoItem.objects.filter(carrito=carrito, is_active=True)
-        for item in carritoItem:
+        carritoItem = CarritoItem.objects.filter(carrito=carrito, is_active=True) #carrito= ... en carritoItem es igual a carrito que se define en la linea anterior 
+        for item in carritoItem:   #este for es para ver elprecio total de los producto y la cantidad de productos en el carrito de compra
             total += (item.product.precio * item.cantidad)
             cantidad += item.cantidad
 

@@ -1,20 +1,23 @@
 {% load static %}
 
 <section class="section-name padding-y-sm">
-    <div class="container">
+    <div class="container ">
         <h3 class="section-title">JIRE STORE</h3>
+
+      
+        <form action="{% url 'search' %}" class="search">
         <header class="section-heading">
             <div class="col-lg col-sm col-md col-8 flex-grow-0">
                 <div class="col-lg  col-md-6 col-sm-12 col">
-                    <form action="#" class="search">
+                    
+                  
                         <div class="input-group w-100">
-                            <input type="text" class="form-control" style="width:60%;" placeholder="Search">
-                            <div class="input-group-append">
-                              <button class="btn btn-info" type="submit">
-                                <i class="fa fa-search"></i>
+                            
+                            <input type="text" class="form-control" style="width:60%;" placeholder="Buscar productos" name="keyword">
+                            
+                            <button class="btn btn-info rounded-2" type="submit">
+                                <i class="fa fa-search m-0"></i>
                               </button>
-                              
-                            </div>
                             <div class="category-wrap dropdown d-inline-block ml-5">
                                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-bars"></i> Categorias
@@ -24,10 +27,14 @@
                                     <a class="dropdown-item" href="{{Categoria.get_url}}">{{Categoria.nombre_categoria}}</a>
                                     {%endfor%}
                                 </div>
+                                <a href="{% url 'carrito' %}" class="widget-header pl-3 ml-3">
+                                    <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
+                                    <span class="badge badge-pill badge-danger notify">{{ carrito_count }}</span>
+                                </a>
                         </div>
-                    </form> <!-- search-wrap .end// -->
-                </div> <!-- col.// -->
-               
+        </form> <!-- search-wrap .end// -->
+                
+                </div>  
                 
             </div>
         </header>
@@ -36,33 +43,32 @@
 
 <header class="section-header">
     <nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
+        
     <div class="container">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarTop4">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
                  <a href="#" class="nav-link">Espanol</a>
-                
-            </li>
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link"> PYG</a>
-            </li>
+                 <a href="#" class="nav-link">English</a>
         </ul>
         
-            <a href="./cart.html" class="widget-header pl-3 ml-3">
-                <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-                <span class="badge badge-pill badge-danger notify">0</span>
-            </a>
-        </div> <!-- category-wrap.// -->
-        <ul class="navbar-nav">
+    </div> <!-- category-wrap.// -->
+    
+    
+        <!-- <ul class="navbar-nav">
             <li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Email </a></li>
             <li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> Llamanos</a></li>
             
-        </ul> <!-- list-inline //  -->
+        </ul>  -->
+        <!-- list-inline //  -->
       </div> <!-- navbar-collapse .// -->
+      
     </div> <!-- container //  -->
+    
     </nav>
     
 

@@ -12,6 +12,8 @@
             </header><!-- sect-heading -->
             
             <div class="row">
+
+                {% if productos %}
                 {% for producto in productos%} 
                 <div class="col-sm-3 ">
                     <div class="card card-product-grid">
@@ -21,13 +23,54 @@
                         <a href="{{ producto.get_url }}" class="title">{{producto.nombre_producto}}</a>
                         <div class="price mt-1">{{producto.precio}}</div> <!-- price-wrap.// -->
                     </figcaption>
-                    <a href="" class="btn btn-block btn-info">Agregar al carrito</a>
+                    
+                    {%if producto.stock <= 0%}
+                    <h5>Fuera de stock</h5>
+                    {%else%}
+                    <a href="{%url 'agregarCarrito' producto.id%}" class="btn btn-block btn-info">Agregar al carrito</a>
+                    {% endif %}
                 </div>
-            </div> <!-- col.// -->
-            {% endfor %}
-        </div> <!-- row.// -->
+                </div> <!-- col.// -->
+                {% endfor %}
+                {%else%}
+                <div>
+                    <h2 class="text-center text-danger"> no se encontraron resultados</h2>
+                </div>
+                {% endif %}
+            <main>
+                <nav class="mt-4" aria-label="Page navigation sample">
+                    {% if productos.has_other_pages %}
+                    <ul class="pagination">
+
+                        {%if productos.has_previous %}
+                        <li class="page-item "><a class="page-link" href="?page={{productos.previous_page_number}}">Anterior</a></li>
+                        {%else%}
+                        <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+                        {% endif %}
+
+                        {% for i in productos.paginator.page_range %}
+                        {% if productos.number == i %}
+                        <li class="page-item active"><a class="page-link" href="#">{{i}}</a></li>
+                        {% else %}
+                        <li class="page-item "><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if productos.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{productos.next_page_number}}">Siguiente</a></li>
+                        {% else %}
+                        <li class="page-item disabled"><a class="page-link" href="#">Siguiente</a></li>
+                        {% endif %}
+                    </ul>
+                    {% endif %}
+                  </nav>
+            </main>
+            </div> <!-- row.// -->
+
+            
         
         </div>
+       
         </section>
         
 </body>
