@@ -20,7 +20,7 @@ def catalogoproducto(request, slug=None):
         producto_contador = producto.count()
     else:
         producto = Producto.objects.filter(is_available=True).order_by('id')
-        paginator = Paginator(producto, 3)
+        paginator = Paginator(producto, 4)
         page = request.GET.get('page')
         paged_productos = paginator.get_page(page)
         producto_contador = producto.count()

@@ -43,11 +43,11 @@
                 <div class="col"> 
                     <div class="input-group input-spinner">
                         <div class="input-group-prepend">
-                        <a  href="{% url 'remover_carritoItem' carritoItem.product_id %}" class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
+                        <a  href="{% url 'carrito:remover_carritoItem' carritoItem.product_id %}" class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </a>
                         </div>
                         <input type="text" class="form-control"  value="{{ carritoItem.cantidad }}">
                         <div class="input-group-append">
-                            <a href="{% url 'agregarCarrito' carritoItem.product_id %}" class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
+                            <a href="{% url 'carrito:agregarCarrito' carritoItem.product_id %}" class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </a>
                         </div>
                     </div> 
                 </div> 
@@ -59,7 +59,7 @@
                 </div> 
             </td>
             <td class="text-right"> 
-                <a href="{% url 'eliminar_del_carrito' carritoItem.product.producto_slug %}" class="btn btn-danger"> Eliminar</a>
+                <a href="{% url 'carrito:eliminar_del_carrito' carritoItem.product.producto_slug %}" class="btn btn-danger"> Eliminar</a>
             </td>
         </tr>
         {% endfor %}
@@ -90,7 +90,7 @@
                     <img src="{% static './misc/payments.png'%}" height="26">
                 </p>
                 <a href="./place-order.html" class="btn btn-primary btn-block"> Pagar </a>
-                <a href="{% url 'catalogo_producto'%}" class="btn btn-light btn-block">Continua comprando</a>
+                <a href="{% url 'catalogo:catalogo_producto'%}" class="btn btn-light btn-block">Continua comprando</a>
             </div> 
             </div> 
     

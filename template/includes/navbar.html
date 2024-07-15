@@ -5,7 +5,7 @@
         <h3 class="section-title">JIRE STORE</h3>
 
       
-        <form action="{% url 'search' %}" class="search">
+        <form action="{% url 'catalogo:search' %}" class="search">
         <header class="section-heading">
             <div class="col-lg col-sm col-md col-8 flex-grow-0">
                 <div class="col-lg  col-md-6 col-sm-12 col">
@@ -27,7 +27,7 @@
                                     <a class="dropdown-item" href="{{Categoria.get_url}}">{{Categoria.nombre_categoria}}</a>
                                     {%endfor%}
                                 </div>
-                                <a href="{% url 'carrito' %}" class="widget-header pl-3 ml-3">
+                                <a href="{% url 'carrito:carrito' %}" class="widget-header pl-3 ml-3">
                                     <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
                                     <span class="badge badge-pill badge-danger notify">{{ carrito_count }}</span>
                                 </a>

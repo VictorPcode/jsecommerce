@@ -17,7 +17,7 @@
         <main class="col-md-6 border-left">
           
           
-          <form action="{%url 'agregarCarrito' single_product.id%}" method="get">
+          <form action="{%url 'carrito:agregarCarrito' single_product.id%}" method="get">
             
             <article class="content-body">
               <h2 class="title">{{single_product.nombre_producto}}</h2>
@@ -69,7 +69,7 @@
                 <i class="fas fa-check"></i>
               </a>
               <br />
-              <a href="{% url 'carrito' %}" class="btn btn-primary">
+              <a href="{% url 'carrito:carrito' %}" class="btn btn-primary">
                 <span class="text">Ver carrito de compras</span>
                 <i class="fas fa-eye"></i>
               </a>
@@ -85,7 +85,7 @@
             </button>
               {% endif %} {%endif%}
               <a
-                href="{%url 'catalogo_producto'%}"
+                href="{%url 'catalogo:catalogo_producto'%}"
                 class="btn btn-outline-info float-right"
                 >Volver al catalogo</a
               >

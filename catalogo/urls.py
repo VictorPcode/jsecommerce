@@ -3,6 +3,9 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name = 'catalogo'
+
+
 urlpatterns = [
     path('productos/search/', views.search, name='search'), 
     path('productos/', views.catalogoproducto, name='catalogo_producto'),

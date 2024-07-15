@@ -13,7 +13,7 @@ class Categoria(models.Model):
     
     
     def get_url(self):
-        return reverse('slug', args=[self.slug])
+        return reverse('catalogo:slug', args=[self.slug])
     
     def __str__(self):
         return self.nombre_categoria

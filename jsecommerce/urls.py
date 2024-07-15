@@ -19,9 +19,13 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+app_name = 'catalogo'
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('catalogo/', include('catalogo.urls')),
+    path('catalogo/', include('catalogo.urls'), name='catalogo'),
     path('', views.inicio),
     path('tienda/', include('tienda.urls')),
     path('carrito/', include('carrito.urls')),

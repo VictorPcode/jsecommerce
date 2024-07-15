@@ -32,7 +32,7 @@ def agregarCarrito(request, product_id):
         )
         carrito_item.save()
 
-    return redirect('carrito')
+    return redirect('carrito:carrito')
 
 def remover_carritoItem(request, product_id):
     carrito = get_object_or_404(Carrito, carrito_id=_carrito_id(request))
@@ -47,7 +47,7 @@ def remover_carritoItem(request, product_id):
     except CarritoItem.DoesNotExist:
         pass
 
-    return redirect('carrito')
+    return redirect('carrito:carrito')
 
 def carrito(request, total=0, cantidad=0, carritoItem=None):
     try:
@@ -82,4 +82,4 @@ def eliminar_del_carrito(request, producto_slug):
     except CarritoItem.DoesNotExist:
         pass
 
-    return redirect('carrito')
+    return redirect('carrito:carrito')
