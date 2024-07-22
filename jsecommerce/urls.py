@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from . import views
+from catalogo import views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,8 +25,8 @@ app_name = 'catalogo'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('catalogo/', include('catalogo.urls'), name='catalogo'),
-    path('', views.inicio),
+    path('', include('catalogo.urls'), name='catalogo'),
+    path('', views.catalogoproducto),
     path('tienda/', include('tienda.urls')),
     path('carrito/', include('carrito.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
