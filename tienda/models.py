@@ -7,19 +7,19 @@ class Producto(models.Model):
     producto_slug = models.CharField(max_length=200, unique=True)
     descripcion = models.TextField(max_length=500, blank=True)
     precio = models.IntegerField()
-    images = models.ImageField(upload_to='photos/products')  
+    images = models.ImageField(upload_to='photos/products')
     stock = models.IntegerField()
     is_available = models.BooleanField(default=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     create_date = models.DateTimeField(auto_now_add=True)
     modified_date = models.DateTimeField(auto_now=True)
-    
+
     def get_url(self):
         return reverse('catalogo:product_detail', args=[self.categoria.slug,self.producto_slug])
-    
+
     def __str__(self):
         return self.nombre_producto
-    
+
 
 class VariationManager(models.Manager):
     def colors(self):
@@ -38,8 +38,9 @@ class Variation(models.Model):
     variation_value = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
     create_date = models.DateTimeField(auto_now=True)
-    
+    imagen = models.ImageField(upload_to='variations/', blank=True, null=True)
+
     objects = VariationManager()
-    
-    def __unicode__(self):
-        return self.nombre_producto 
+
+    def __str__(self):
+        return self.variation_category + ': ' + self.variation_value

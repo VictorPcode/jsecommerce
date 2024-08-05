@@ -29,4 +29,5 @@ urlpatterns = [
     path('', views.catalogoproducto),
     path('tienda/', include('tienda.urls')),
     path('carrito/', include('carrito.urls')),
+    path('cuentas/', include('cuentas.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
