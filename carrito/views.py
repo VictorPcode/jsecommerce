@@ -111,12 +111,16 @@ def carrito(request, total=0, cantidad=0, carritoItem=None):
         iva = 0
         grand_total = 0
 
+    formatted_total = f"{total:,.0f}".replace(",", ".")
+    formatted_iva = f"{iva:,.0f}".replace(",", ".")
+    formatted_grand_total = f"{grand_total:,.0f}".replace(",", ".")
+
     context = {
-        'total': total,
+        'total': formatted_total,
         'cantidad': cantidad,
         'carritoItems': carritoItem,
-        'iva': iva,
-        'grand_total': grand_total,
+        'iva': formatted_iva,
+        'grand_total': formatted_grand_total,  # Usa el valor formateado aquí
     }
 
     return render(request, 'carrito.html', context)
