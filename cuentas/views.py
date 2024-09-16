@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from .forms import RegistrationForm
 
 def register(request):
-    return render(request, 'cuentas/register.html')
+    forms = RegistrationForm()
+    context = {
+        'forms': forms
+    }
+    return render(request, 'cuentas/register.html', context)
 
 def login(request):
     return render(request, 'cuentas/login.html')

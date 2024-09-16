@@ -6,6 +6,8 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -100,10 +102,10 @@ body {
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
-    
-    
-    
-    
+
+
+
+
 }
 
 
@@ -5199,7 +5201,7 @@ fieldset:disabled .btn {
     --bs-pagination-focus-bg: #e9ecef;
     --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     --bs-pagination-active-color: #fff;
-    --bs-pagination-active-bg: #0d6efd;
+    --bs-pagination-active-bg: rgb(34 197 94);
     --bs-pagination-active-border-color: #0d6efd;
     --bs-pagination-disabled-color: #6c757d;
     --bs-pagination-disabled-bg: #fff;

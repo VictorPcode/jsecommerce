@@ -1,1 +1,99 @@
-<h2>Register</h2>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Section: Design Block -->
+<section class="">
+  <!-- Jumbotron -->
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(100%, 100%, 100%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            ENCONTRA LAS MEJORES OFERTAS<br />
+            <span class="text-primary">JIRESTORE TE LO TIENE</span>
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            PARTICIPA Y GANA DE NUESTRAS INCREIBLES PROMOCIONES
+            UNICAS E INIGUALABLES
+          </p>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0 rounded-5">
+          <div class="card">
+            <div class="card-body bordered-4 bg-dark py-5 px-md-5">
+              <form action="{%url 'register' %}" method="POST">
+                {%csrf_token%}
+
+                <div class="row">
+
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      {{forms.first_name}}
+                      <label class="form-label text-white" for="form3Example1">NOMBRE</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div data-mdb-input-init class="form-outline">
+                      {{forms.last_name}}
+                      <label class="form-label text-white" for="form3Example2">APELLIDO</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+
+                <!-- Email input -->
+                <div data-mdb-input-init class="form-outline col-sm-6 mb-4">
+                  {{forms.email}}
+                  <label class="form-label text-white" for="form3Example3">EMAIL</label>
+                </div>
+
+                <!-- PhoneNumber input -->
+                <div data-mdb-input-init class="form-outline col-sm-6 mb-4">
+                  {{forms.phone_number}}
+                  <label class="form-label text-white" for="form3Example3">TELEFONO</label>
+                </div>
+
+                <!-- Password input -->
+                <div data-mdb-input-init class="form-outline col-sm-6 mb-4">
+                  {{forms.password}}
+                  <label class="form-label text-white" for="form3Example4">CONTRASENA</label>
+                </div>
+
+                <!-- Confirmar Password input -->
+                <div data-mdb-input-init class="form-outline col-sm-6 mb-4">
+                  {{forms.confirm_password}}
+                  <label class="form-label text-white" for="form3Example4">CONFIRMAR CONTRASENA</label>
+                </div>
+
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+                  REGISTRARME
+                </button>
+
+                <!-- Register buttons -->
+                <div class="text-center text-white">
+                  <p>O REGISTRATE CON:</p>
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+
+                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+{% endblock %}
